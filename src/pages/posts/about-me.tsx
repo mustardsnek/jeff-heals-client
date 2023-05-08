@@ -4,7 +4,7 @@ import { BasePage } from "@mustardsnek/vesslio-storybook";
 
 const GET_PAGES = gql`
   query {
-    pages(where: { title: { equals: "HomePage" } }) {
+    pages(where: { title: { equals: "AboutMe" } }) {
       content {
         document(hydrateRelationships: true)
       }
@@ -12,7 +12,7 @@ const GET_PAGES = gql`
   }
 `;
 
-export default function Home() {
+export default function AboutMe() {
   const { data, loading, error } = useQuery(GET_PAGES);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;

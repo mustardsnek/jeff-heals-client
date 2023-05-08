@@ -1,0 +1,24 @@
+query GetPost($slug: String!) {
+  posts(where: { slug: { equals: $slug } }) {
+    headerImage
+    title
+    content {
+      document
+    }
+    author {
+      name
+    }
+    slug
+    publishDate
+    story
+  }
+}
+
+query GetPage($title: String!) {
+  page(where: { title: $title }) {
+    title
+    content {
+      document
+    }
+  }
+}
